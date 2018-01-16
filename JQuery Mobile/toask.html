@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Configuarciones por defecto</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $.mobile.pageLoadErrorMessage = 'Esta pagina no esxiste, el mensaje de error ha sido cambiado';
+            $.mobile.fixedToolbars.show(true);
+            $.mobile.defaultDialogTransition = 'slideup';
+            $.mobile.defaultPageTransition = 'flip';
+            $("#mostrar").click(function (e) {
+                $.mobile.loadingMessage = "Hemos modificado el mensaje del Loading";
+                $.mobile.showPageLoadingMsg('');
+            });
+            $("#ocultar").click(function (e) {
+                $.mobile.hidePageLoadingMsg();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div data-role="page" id="home">
+        <div data-role="header" data-position="fixed">
+            <h1>Configuraciones</h1>
+        </div>
+        <div data-role="content">
+            <a href="#" id="mostrar" data-role="button">Mostrar Loading</a>
+            <a href="#" id="ocultar" data-role="button">Ocultar Loading</a>
+            <a href="#pag2" data-role="button">Probar nueva transicion de paginas</a>
+            <a href="#dialogo" data-role="button" data-rel="dialog">Probar nueva transicion de Dialogos</a>
+            <a href="demo.html" data-role="button">Aqui hay un error, la pagina del vinculo no existe</a>
+        </div>
+        <div data-role="footer">
+            <h3>Configuraciones</h3>
+        </div>
+    </div>
+    <div data-role="page" id="pag2">
+        <div data-role="header" data-position="fixed">
+            <h1>Configuraciones pagina 2</h1>
+        </div>
+        <div data-role="content">
+            <p>Este es una pagina y puedes ver que hace la transicion flip, sin poner el data-transition en el anlace, todas
+                las paginas tendran la misma transicion</p>
+            <a href="#home" data-role="button" data-icon="back">Regrsar</a>
+        </div>
+        <div data-role="footer">
+            <h3>Configuraciones pagina 2</h3>
+        </div>
+    </div>
+    <div data-role="page" id="dialogo">
+        <div data-role="header" data-position="fixed">
+            <h1>Configuraciones</h1>
+        </div>
+        <div data-role="content">
+            <p>Este es un dialog y puedes ver que hace la transicion slideup, sin poner el data-transition en el anlace, todos
+                los dialogos tendran la misma transicion</p>
+            <a href="#home" data-role="button" data-icon="back">Regrsar</a>
+        </div>
+    </div>
+</body>
+
+</html>

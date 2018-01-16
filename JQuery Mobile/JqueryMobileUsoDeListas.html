@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <title>Liastas con jQuery Mobile</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="inicio">
+        <div data-role="header">
+            <h1>Listas</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview">
+                <li>
+                    <a href="#coche">Coche</a>
+                </li>
+                <li>
+                    <a href="#avion">Avión</a>
+                </li>
+                <li>
+                    <a href="#aeroplano">Aeroplano</a>
+                </li>
+            </ul>
+            <ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="a">
+                <li data-role="list-divider">Medios de transporte terrestrses</li>
+                <li>
+                    <a href="#coche">Coche</a>
+                </li>
+                <li data-role="list-divider">Medios de transporte Aereos</li>
+                <li>
+                    <a href="#avion">Avión</a>
+                </li>
+                <li>
+                    <a href="#aeroplano">Aeroplano</a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer">
+            <h3>Listas</h3>
+        </div>
+    </div>
+    <div data-role="page" id="coche">
+        <div data-role="header">
+            <h1>Coches</h1>
+        </div>
+        <div data-role="content">
+            Los coches son un medio de transporte terrestre
+            <br>
+            <a href="#inicio" data-role="button" data-theme="b" data-inline="true">Inicio</a>
+        </div>
+        <div data-role="footer">
+            <h3>Los coches</h3>
+        </div>
+    </div>
+    <div data-role="page" id="avion">
+        <div data-role="header">
+            <h1>Aviones</h1>
+        </div>
+        <div data-role="content">
+            Los aviones son un medio de transporte aereo
+            <br>
+            <a href="#inicio" data-role="button" data-theme="e" data-inline="true">Inicio</a>
+        </div>
+        <div data-role="footer">
+            <h3>Aviones</h3>
+        </div>
+    </div>
+    <div data-role="page" id="aeroplano">
+        <div data-role="header">
+            <h1>Aeroplanos</h1>
+        </div>
+        <div data-role="content">
+            Los aeroplanos son un medio de transporte aereo, menor que los aviones
+            <br>
+            <a href="#inicio" data-role="button" data-theme="d" data-inline="true">Inicio</a>
+        </div>
+        <div data-role="footer">
+            <h3>Aeroplanos</h3>
+        </div>
+    </div>
+</body>
+
+</html>
