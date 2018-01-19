@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Probando jQuery Mobile</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-
+1.0.min.js"></script>
+-->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<!-- PORTADA -->
+<div data-role="page" id="portada">
+    <div data-role="header">
+    <h1>Titular de página portada</h1>
+    </div>
+    <div data-role="content">
+    <p>Fabrico guitarras de todos los colores</p>
+    <p>Puedes ver <a href="#galeria">mis guitarras</a></p>
+    <p>Puedes <a href="#comprar" data-rel="dialog">comprar una guitarra</a></p>
+    </div>
+    <div data-role="footer">
+    Pie de página
+    </div>
+    </div>
+    <!-- /PORTADA -->
+    <!-- GALERIA -->
+    <div data-role="page" id="galeria" data-title="Galería de guitarras">
+    <div data-role="header">
+    <h1>Galería de fotos de mis guitarras</h1>
+    </div>
+    <div data-role="content">
+    <p>Puedes ver todas mis guitarras</p>
+    <p><a href="#portada">volver</a></p>
+    </div>
+    <div data-role="footer">
+    Pie de página
+    </div>
+    </div>
+    <!-- /GALERIA -->
+    <!-- COMPRAR -->
+    <div data-role="page" id="comprar" data-title="Comprar guitarras">
+    <div data-role="header">
+    <h1>Comprar guitarras</h1>
+    </div>
+    <div data-role="content">
+    <p>Servicio temporalmente indisponible</p>
+    <p><a href="#portada">volver</a></p>
+    </div>
+    <div data-role="footer">
+    Pie de página
+    </div>
+    </div>
+    <!-- /COMPRAR -->
+</body>
+</html>
