@@ -15,7 +15,8 @@
 		$("#div1 span").draggable (
 		{
 			helper : "clone",
-			revert: true, 
+			revert: true,
+			cursor: "move",	 
 			start : function (event, ui)
 			{
 				$("#start").text (ui.offset.top + ", " + ui.offset.left);

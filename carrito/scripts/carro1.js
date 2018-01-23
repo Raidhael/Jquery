@@ -1,8 +1,11 @@
 $(function () {
     var control = false;
-    
+    $('#navigate').hide();
     function establece_evento_dbclick_items(objeto) {
+        //Ocultar barra de navegacion
+        
         $('.item').on('click', function carro(event) {
+            $('#navigate').show();
             var stock = $(this).find(".stock").text().split(' ')[1];
             var compras = $
             if (stock > 0) {
@@ -11,19 +14,26 @@ $(function () {
                 stock--;
                 compras++;
 
-                //$(this).find(".stock").text("Stock " + stock);
-                //PRECIO A PAGAR
+                
+                //Precio a pagar
                 var precio = $(this).find(".price").text().split(' ')[0];
                 var pago = $("#cprice").val().split(' ')[0];
                 var totalPago = parseInt(precio) + parseInt(pago);
                 $("#cprice").val(totalPago + " €");
+                //Aumentar el numero de compras
                 var numeroCompras = $('#citem').val();
                 numeroCompras = parseInt(numeroCompras) + 1;
                 $('#citem').val(numeroCompras);
+                muestraMovimiento(numeroCompras);
+                //Ajustar el tamaño
+                ajustaTamanyo(numeroCompras);
+                //Aqui acaba precio a pagar
                 //CLONACION
-                $(this).clone().attr("id", "c" + this.id).prependTo('#cart_items');;
+                $(this).clone().attr("id", "c" + this.id).prependTo('#cart_items');
                 $('#c' + this.id + " .stock").hide();
-                //ENLACE ELIMINAR
+                //Aqui acaba la clonacion
+                
+                //Enlace de eliminacion
                 var $delete = $('<a href="" class="delete"></a>');
                 $delete.prependTo('#c' + this.id);
 
@@ -60,6 +70,8 @@ $(function () {
 
                 });
 
+                //Aqui acaba la funcion de enlace de borrado
+
 
 
                 $(this).find(".stock").text("Stock " + stock);
@@ -74,6 +86,7 @@ $(function () {
 
 
     }
+    //Metodo que se ejecuta cuando se acaba el stock
     function stockAgotado(event) {
 
         agotado = "agotado";
@@ -87,18 +100,36 @@ $(function () {
     //Boton vaciar
 
     //Metodos -
+    //Se ajusta el tamaño del div para que se pueda navegar a traves de ellos
+    function ajustaTamanyo(num){
+        var size  = num * 120;
+       $('#cart_items').width(size);
+    }
+    //Se oculta las opciones de movimiento en menos de 4 elementos
+    function muestraMovimiento(num){
+        if (num <= 4) {
+            $('#btn_prev,#btn_next').hide();
+        }else{
+            $('#btn_prev,#btn_next').show();
+        }
+    }
+    //Se añade la funcionalidad de navegar a traves de los items a comprar
     function establece_movimiento() {
         $('#btn_prev').on('click', function () {
-            $("#cart_items").animate({
-                left: '+=50'
-            })
+            var posicion = $('#cart_items').offset().left;
+            
+            if (posicion < 363){
+                $("#cart_items").animate({
+                    left: '+=120' 
+                })
+        }
             
         })
 
         $('#btn_next').on('click', function () {
-            $("#cart_items").animate({
-                left: '-=50'
-            })      
+                $("#cart_items").animate({
+                    left: '-=120'    
+                })
         })
     }
 
